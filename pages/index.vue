@@ -30,62 +30,333 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="price-card-lvl1">
-                    <div class="price-card-clr-lvl1">
-                        <div class="hard-score">
-                            <ul>
-                                <li>
-                                    <img class="hard-icon" src="public/hard.svg">
-                                </li>
-                            </ul>
+            <div class="container">   
+                <div class="table-raitings">
+                    <p class="raiting-txt">Team Rating</p>
+                    <div class="table-raiting">
+                        <div class="raiting">
+                            <div class="header-table">
+                                <div class="raiting-block-left-side">
+                                    <p class="raiting-txt-two">Place</p>
+                                </div>
+                                <div class="raiting-block-center">
+                                    <p class="raiting-txt-two">Team neam</p>
+                                </div>
+                                <div class="raiting-block-right-side">
+                                    <p class="raiting-txt-two">Victories</p>
+                                </div>
+                            </div>  
+                            <div v-for="(team, index) in topTeams" :key="index" v-bind:class="getClass(index)">
+                                <div class="raiting-block-left-side">
+                                    <p>{{ index + 1 }}#</p>
+                                </div>
+                                <div class="raiting-block-center">
+                                    <p>{{ team.name }}</p>
+                                </div>
+                                <div class="raiting-block-right-side">
+                                    <p>{{ team.wins }}</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="lvl-icon">
-                            <img class="lvl-img" src="public/lvl1.png">
-                        </div>
-                        <p class="lvl-txt">Level 1</p>
-                        <div class="white-line"></div>
-                    </div>
+                    </div>  
                 </div>
-                <div class="price-card-lvl2">
-                    <div class="price-card-clr-lvl2">
-                        <div class="hard-score">
-                            <ul>
-                                <li>
-                                    <img class="hard-icon" src="public/hard.svg">
-                                </li>
-                                <li>
-                                    <img class="hard-icon-cntr" src="public/hard.svg">
-                                </li>
-                            </ul>
+                <div class="navigation-price-card">
+                    <div class="price-card-lvl1">
+                        <div class="price-card-clr-lvl1">
+                            <div class="hard-score">
+                                <ul>
+                                    <li>
+                                        <img class="hard-icon" src="public/hard.svg">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="lvl-icon">
+                                <img class="lvl-img" src="public/lvl1.png">
+                            </div>
+                            <p class="lvl-txt">Level 1</p>
+                            <div class="white-line"></div>
+                            <div>
+                                <p class="price">20 GEL<span class="price-txt-two">/player</span></p>
+                                <p class="price-txt-three">Conditions:</p>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/ime.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">30 minutes</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/players.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">10 players</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="price-txt-three">Each player gets:</p>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/armor.png">
+                                        </li> 
+                                        <li>
+                                            <p class="icon-txt">Protection</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/ammo.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">250 rounds</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/gun.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">Guns:</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <p class="icon-txt-two">Gun AKC-74H</p>
+                                            <p class="icon-txt-two">Pistol Glock 19</p>
+                                            <p class="icon-txt-two">Sniper СM708</p>
+                                            <p class="icon-txt-two">Gun M4 CQBR</p>
+                                            <p class="icon-txt-two">Gun Steyr AUG A1</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="price-txt-three">Game mode</p>
+                                <div>
+                                    <ul class="navigation-conditions-flag">
+                                        <li>
+                                            <img src="public/flag.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt-two">Сapture the flag</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="price-block">
+                                    <p class="price-txt-four">200 GEL</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="lvl-icon">
-                            <img class="lvl-img" src="public/lvl2.png">
-                        </div>
-                        <p class="lvl-txt">Level 2</p>
-                        <div class="white-line"></div>
                     </div>
-                </div>
-                <div class="price-card-lvl3">
-                    <div class="price-card-clr-lvl3">
-                        <div class="hard-score">
-                            <ul>
-                                <li>
-                                    <img class="hard-icon" src="public/hard.svg">
-                                </li>
-                                <li>
-                                    <img class="hard-icon-cntr" src="public/hard.svg">
-                                </li>
-                                <li>
-                                    <img class="hard-icon" src="public/hard.svg">
-                                </li>
-                            </ul>
+                    <div class="price-card-lvl2">
+                        <div class="price-card-clr-lvl2">
+                            <div class="hard-score">
+                                <ul>
+                                    <li>
+                                        <img class="hard-icon" src="public/hard.svg">
+                                    </li>
+                                    <li>
+                                        <img class="hard-icon-cntr" src="public/hard.svg">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="lvl-icon">
+                                <img class="lvl-img" src="public/lvl2.png">
+                            </div>
+                            <p class="lvl-txt">Level 2</p>
+                            <div class="white-line"></div>
+                            <div>
+                                <p class="price">20 GEL<span class="price-txt-two">/player</span></p>
+                                <p class="price-txt-three">Conditions:</p>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/ime.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">30 minutes</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/players.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">10 players</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="price-txt-three">Each player gets:</p>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/armor.png">
+                                        </li> 
+                                        <li>
+                                            <p class="icon-txt">Protection</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/ammo.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">250 rounds</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/gun.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">Guns:</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <p class="icon-txt-two">Gun AKC-74H</p>
+                                            <p class="icon-txt-two">Pistol Glock 19</p>
+                                            <p class="icon-txt-two">Sniper СM708</p>
+                                            <p class="icon-txt-two">Gun M4 CQBR</p>
+                                            <p class="icon-txt-two">Gun Steyr AUG A1</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="price-txt-three">Game mode</p>
+                                <div>
+                                    <ul class="navigation-conditions-flag">
+                                        <li>
+                                            <img src="public/flag.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt-two">Сapture the flag</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="price-block">
+                                    <p class="price-txt-four">200 GEL</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="lvl-icon">
-                            <img class="lvl-img" src="public/lvl3.png">
+                    </div>
+                    <div class="price-card-lvl3">
+                        <div class="price-card-clr-lvl3">
+                            <div class="hard-score">
+                                <ul>
+                                    <li>
+                                        <img class="hard-icon" src="public/hard.svg">
+                                    </li>
+                                    <li>
+                                        <img class="hard-icon-cntr" src="public/hard.svg">
+                                    </li>
+                                    <li>
+                                        <img class="hard-icon" src="public/hard.svg">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="lvl-icon">
+                                <img class="lvl-img" src="public/lvl3.png">
+                            </div>
+                            <p class="lvl-txt">Level 3</p>
+                            <div class="white-line"></div>
+                            <div>
+                                <p class="price">20 GEL<span class="price-txt-two">/player</span></p>
+                                <p class="price-txt-three">Conditions:</p>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/ime.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">30 minutes</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/players.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">10 players</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="price-txt-three">Each player gets:</p>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/armor.png">
+                                        </li> 
+                                        <li>
+                                            <p class="icon-txt">Protection</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/ammo.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">250 rounds</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <img class="icons" src="public/gun.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt">Guns:</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="navigation-conditions">
+                                        <li>
+                                            <p class="icon-txt-two">Gun AKC-74H</p>
+                                            <p class="icon-txt-two">Pistol Glock 19</p>
+                                            <p class="icon-txt-two">Sniper СM708</p>
+                                            <p class="icon-txt-two">Gun M4 CQBR</p>
+                                            <p class="icon-txt-two">Gun Steyr AUG A1</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="price-txt-three">Game mode</p>
+                                <div>
+                                    <ul class="navigation-conditions-flag">
+                                        <li>
+                                            <img src="public/flag.png">
+                                        </li>
+                                        <li>
+                                            <p class="icon-txt-two">Сapture the flag</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="price-block">
+                                    <p class="price-txt-four">200 GEL</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="lvl-txt">Level 3</p>
-                        <div class="white-line"></div>
                     </div>
                 </div>
             </div>
@@ -97,11 +368,92 @@
 export default {
   data() {
     return {
+        teams: [
+          {
+            name: ' ',
+            wins: 159,
+          },
+          {
+            name: 'Hoopers',
+            wins: 15,
+          },
+          {
+            name: 'Warrior',
+            wins: 2,
+          },
+          {
+            name: 'four',
+            wins: 29,
+          },
+          {
+            name: 'five',
+            wins: 159,
+          },
+          {
+            name: 'six',
+            wins: 15,
+          },
+          {
+            name: 'seven',
+            wins: 99,
+          },
+          {
+            name: 'Saint Warrior',
+            wins: 29,
+          },
+          {
+            name: 'Warrior',
+            wins: 2,
+          },
+          {
+            name: 'Saint Warrior',
+            wins: 29,
+          },
+          {
+            name: 'Warrior',
+            wins: 2,
+          },
+          {
+            name: 'Saint Warrior',
+            wins: 29,
+          },
+          {
+            name: 'Warrior',
+            wins: 200,
+          },
+          {
+            name: 'Saint Warrior',
+            wins: 29,
+          },
+        ],
         language_status: false,
         bid_letterENG: 'Sign up',
         bid_letterGEO: 'რეგისტრაცია',
     }
-  }
+  },
+    computed: {
+        sortedTeams() {
+            return [...this.teams].sort((a, b) => b.wins - a.wins);
+        },
+        topTeams() {
+            return this.sortedTeams.slice(0, 10); // Получаем только первые 10 команд
+        },
+    },
+    methods: {
+        getClass(index) {
+            if (index === 0) return 'first-place';
+            if (index === 1) return 'second-place';
+            if (index === 2) return 'third-place';
+            if (index === 3) return 'raiting-txt-two';
+            if (index === 4) return 'raiting-txt-two';
+            if (index === 5) return 'raiting-txt-two';
+            if (index === 6) return 'raiting-txt-two';
+            if (index === 7) return 'raiting-txt-two';
+            if (index === 8) return 'raiting-txt-two';
+            if (index === 9) return 'raiting-txt-two';
+            return ''; // Для остальных мест
+        },
+    },
 }
 </script>
 
@@ -287,7 +639,7 @@ button {
     border-radius: 12px;
     background: rgb(255, 255, 255);
     width: 375px;
-    height: 502px;
+    height: 1500px;
     float: left;
 }
 
@@ -310,16 +662,15 @@ button {
 
 .container {
     width: 100vw;
-    display: flex;
     justify-content: center;
     background-image: url(public/backTwo.png);
-    height: 2048px;
+    height: 5267px;
 }
 
 .price-card-clr-lvl1 {
     background: rgb(238, 41, 61);
     width: 375px;
-    height: 485px;
+    height: 1480px;
     border-radius: 12px 12px 0px 0px;
 }
 
@@ -376,6 +727,216 @@ button {
     margin: 25px 0px 0px 52px
 }
 
+/*  #################  */
+
+.raiting-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 115px;
+}
+
+.table-raiting {
+    display: flex;
+    justify-content: center;
+}
+
+.raiting {
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 12px 12px 0px 0px;
+    background: rgba(0, 0, 0, 0.49);
+    width: 1245px;
+    height: 926px;
+
+}
+
+.raiting-txt-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 71px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.raiting-block-left-side {
+    width: 275px;
+    height: 84px;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    border-radius: 12px 0px 0px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.raiting-block-center {
+    width: 691px;
+    height: 84px;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    border-radius: 12px 0px 0px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.raiting-block-right-side {
+    width: 275px;
+    height: 84px;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-right: 0px solid rgb(255, 255, 255);
+    border-radius: 12px 0px 0px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-place {
+    color: rgb(255, 235, 63);
+    font-family: 'Odibee Sans';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(255, 235, 63); /* Добавленная тень */
+}
+
+
+.second-place {
+    color: rgb(184, 184, 184);
+    font-family: 'Odibee Sans';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(184, 184, 184);
+}
+
+.third-place {
+    color: rgb(190, 113, 67);
+    font-family: 'Odibee Sans';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(190, 113, 67);
+}
+
+.navigation-price-card {
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.price {
+    width: 375px;
+    height: 65px;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 20px 0px 0px 0px
+}
+
+.price-txt-two {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.price-txt-three {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 375px;
+    height: 44px;
+    margin: 40px 0px 0px 0px
+}
+
+.icon-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0px 0px 0px 10px;
+    width: 150px;
+}
+
+.icon-txt-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0px 0px 0px 10px;
+    width: 230px;
+}
+
+.navigation-conditions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+}
+
+.navigation-conditions-flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+    flex-direction: column;
+}
+
+.price-block {
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px 0px 0px 0px;
+    width: 169px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35 px 0px 0px 206px;
+}
+
+.price-txt-four {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0px;
+    text-align: center;
+}
 @media (min-width: 321px) and (max-width: 450px) {
 * {
     margin: 0px;
@@ -542,25 +1103,27 @@ button {
     border-radius: 10px;
     background: rgb(255, 255, 255);
     width: 295px;
-    height: 331px;
+    height: 1135px;
     float: left;
+    margin: 20px 0px 0px 0px;
 }
 
 .price-card-lvl2 {
     border-radius: 10px;
     background: rgb(255, 255, 255);
     width: 295px;
-    height: 331px;
+    height: 1135px;
     float: left;
-    margin: 0px 60px 0px 60px;
+    margin: 20px 60px 0px 60px;
 }
 
 .price-card-lvl3 {
     border-radius: 10px;
     background: rgb(255, 255, 255);
     width: 295px;
-    height: 331px;
+    height: 1135px;
     float: left;
+    margin: 20px 0px 0px 0px;
 }
 
 .container {
@@ -568,7 +1131,7 @@ button {
     display: flex;
     justify-content: center;
     background-image: url(public/backTwo.png);
-    height: 1000px;
+    height: 6000px;
     flex-direction: column;
     align-items: center;
 }
@@ -576,21 +1139,21 @@ button {
 .price-card-clr-lvl1 {
     background: rgb(238, 41, 61);
     width: 295px;
-    height: 316px;
+    height: 1115px;
     border-radius: 12px 12px 0px 0px;
 }
 
 .price-card-clr-lvl2 {
     background: rgb(142, 89, 205);
     width: 295px;
-    height: 316px;
+    height: 1115px;
     border-radius: 12px 12px 0px 0px;
 }
 
 .price-card-clr-lvl3 {
     background: rgb(242, 166, 42);
     width: 295px;
-    height: 316px;
+    height: 1115px;
     border-radius: 12px 12px 0px 0px;
 }
 
@@ -618,7 +1181,7 @@ button {
 }
 
 .lvl-txt {
-    width: 375px;
+    width: 295px;
     color: rgb(255, 255, 255);
     font-family: 'Montserrat';
     font-size: 48px;
@@ -641,6 +1204,225 @@ button {
 
 .language-img {
     width: 15px;
+}
+
+.raiting-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 80px;
+}
+
+.table-raiting {
+    display: flex;
+    justify-content: center;
+}
+
+.raiting {
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 12px 12px 0px 0px;
+    background: rgba(0, 0, 0, 0.49);
+    width: 295px;
+    height: 375px;
+}
+
+.raiting-txt-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 71px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.raiting-block-left-side {
+    width: 75px;
+    height: 34px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    border-radius: 12px 0px 0px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.raiting-block-center {
+    width: 143px;
+    height: 34px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-right: 1px solid rgb(255, 255, 255);
+    border-radius: 12px 0px 0px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.raiting-block-right-side {
+    width: 75px;
+    height: 34px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    border-right: 0px solid rgb(255, 255, 255);
+    border-radius: 12px 0px 0px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-place {
+    color: rgb(255, 235, 63);
+    font-family: 'Odibee Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(255, 235, 63); /* Добавленная тень */
+}
+
+
+.second-place {
+    color: rgb(184, 184, 184);
+    font-family: 'Odibee Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(184, 184, 184);
+}
+
+.third-place {
+    color: rgb(190, 113, 67);
+    font-family: 'Odibee Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-shadow: 0 0 40px rgb(190, 113, 67);
+}
+
+.navigation-price-card {
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-raitings {
+    margin: 500px 0px 0px 0px
+}
+/** **/
+
+.price {
+    width: 295px;
+    height: 65px;
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 10px 0px 0px 0px
+}
+
+.price-txt-two {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.price-txt-three {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 295px;
+    height: 44px;
+    margin: 20px 0px 0px 0px
+}
+
+.icon-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0px 0px 0px 10px;
+    width: 150px;
+}
+
+.icon-txt-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    width: 230px;
+}
+
+.navigation-conditions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px 0px 0px;
+}
+
+.navigation-conditions-flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px 0px 0px;
+    flex-direction: column;
+}
+
+.price-block {
+    box-sizing: border-box;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 10px 0px 0px 0px;
+    width: 169px;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0px 0px 126px;
+}
+
+.price-txt-four {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.icons {
+    width: 35px;
+    height: 35px;
 }
 }
 </style>
