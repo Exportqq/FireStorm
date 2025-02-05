@@ -13,7 +13,7 @@
                     </div>
                 </div>  
                 <div>
-                    <div>
+                    <div class="ttx-nav">
                         <p class="header-txt">
                             <span class="first-letter">F</span>
                             <span class="center-letter">IRE STOR</span>
@@ -385,7 +385,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div style="display: none;">
                     <p v-if="language_status == true" class="raiting-txt">Sign up for the game</p>
                     <p v-if="language_status == false" class="raiting-txtGEO">დარეგისტრირდით თამაშზე</p>
                     <div class="all-contact-block-nav">
@@ -820,7 +820,7 @@ button {
     text-align: center;
     width: 100vw;
     height: 115px;
-    margin: 250px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 .raiting-txtGEO {
@@ -833,7 +833,7 @@ button {
     text-align: center;
     width: 100vw;
     height: 115px;
-    margin: 250px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
 }
 
 .table-raiting {
@@ -1266,7 +1266,7 @@ ul li {
 
 .logo {
     width: 80px;
-    margin: 8px 0px 0px 90px;
+    margin: 18px 50px 0px 90px;
 }
 
 .bid-btn {
@@ -1433,12 +1433,9 @@ button {
 
 .container {
     width: 100vw;
-    display: flex;
-    justify-content: center;
+    
     background-image: url(public/backTwo.png);
-    height: 4050px;
-    flex-direction: column;
-    align-items: center;
+    height: 4720px;
 }
 
 .price-card-clr-lvl1 {
@@ -1533,7 +1530,7 @@ button {
     text-align: center;
     width: 100vw;
     height: 80px;
-    margin: 20px 0px 0px 0px
+    margin: 0px 0px 0px 0px
 }
 
 .table-raiting {
@@ -1653,7 +1650,7 @@ button {
 }
 
 .table-raitings {
-    margin: 500px 0px 0px 0px
+    margin: 0px 0px 0px 0px
 }
 /** **/
 
@@ -1900,6 +1897,10 @@ button {
 .height {
     height: 20px;
     margin: 20px 0px 0px 0px
+}
+
+.ttx-nav {
+    margin: 40px 0px 0px 0px;
 }
 }
 </style>
