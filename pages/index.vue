@@ -2,22 +2,15 @@
     <div>
         <div style="background-color: black;">
             <div class="header">
-                <div>
-                    <ul class="list-sett">
-                        <li>
-                            <img class="logo" src="public/logo.svg">
-                        </li>
-                        <li>
-                            <button v-if="language_status == true" class="bid-btn">{{ bid_letterENG }}</button>
-                            <button v-if="language_status == false" class="bid-btn">{{ bid_letterGEO }}</button>
-                        </li>
-                        <li class="lang-block">
-                            <button v-if="language_status == false"  @click="language_status =! language_status" class="lang-btn-eng">ENG <img class="language-img" src="public/usa.png"></button>
-                            <button v-if="language_status == true" class="lang-btn-eng-on">ENG <img class="language-img" src="public/usa.png"></button>
-                            <button v-if="language_status == true" @click="language_status =! language_status" class="lang-btn-geo">GEO <img class="language-img" src="public/geo.png"></button>
-                            <button v-if="language_status == false" class="lang-btn-geo-on">GEO <img class="language-img" src="public/geo.png"></button>
-                        </li>
-                    </ul>
+                <div class="nav-block">
+                    <div style="float: left;">
+                        <img class="logo" src="public/logo.svg">
+                    </div>
+                    <div class="nav-block-two">
+                        <button @click="language_status =! language_status">
+                            <img class="height" src="public/replace.svg">
+                        </button>
+                    </div>
                 </div>  
                 <div>
                     <div>
@@ -151,19 +144,6 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <p v-if="language_status == true" class="price-txt-three">Game mode</p>
-                                <p v-if="language_status == false" class="price-txt-three">თამაშის რეჟიმი</p>
-                                <div>
-                                    <ul class="navigation-conditions-flag">
-                                        <li>
-                                            <img src="public/flag.png">
-                                        </li>
-                                        <li>
-                                            <p v-if="language_status == true" class="icon-txt-two">Сapture the flag</p>
-                                            <p v-if="language_status == false" class="icon-txt-two">დროშა დაიჭირე</p>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="price-block">
                                     <p class="price-txt-four">200 GEL</p>
                                 </div>
@@ -256,19 +236,6 @@
                                             <p class="icon-txt-two">Sniper СM708</p>
                                             <p class="icon-txt-two">Gun M4 CQBR</p>
                                             <p class="icon-txt-two">Gun Steyr AUG A1</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p v-if="language_status == true" class="price-txt-three">Game mode</p>
-                                <p v-if="language_status == false" class="price-txt-three">თამაშის რეჟიმი</p>
-                                <div>
-                                    <ul class="navigation-conditions-flag">
-                                        <li>
-                                            <img src="public/mode2.png">
-                                        </li>
-                                        <li>
-                                            <p v-if="language_status == true" class="icon-txt-two">Fight to the death</p>
-                                            <p v-if="language_status == false" class="icon-txt-two">ბრძოლა სიკვდილამდე</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -367,19 +334,6 @@
                                             <p class="icon-txt-two">Sniper СM708</p>
                                             <p class="icon-txt-two">Gun M4 CQBR</p>
                                             <p class="icon-txt-two">Gun Steyr AUG A1</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p v-if="language_status == true" class="price-txt-three">Game mode</p>
-                                <p v-if="language_status == false" class="price-txt-three">თამაშის რეჟიმი</p>
-                                <div>
-                                    <ul class="navigation-conditions-flag">
-                                        <li>
-                                            <img src="public/mode3.png">
-                                        </li>
-                                        <li>
-                                            <p v-if="language_status == true" class="icon-txt-two">Rescue the hostage</p>
-                                            <p v-if="language_status == false" class="icon-txt-two">მძევლის გადარჩენა</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -494,7 +448,7 @@ export default {
     return {
         teams: [
           {
-            name: ' ',
+            name: 'www',
             wins: 159,
           },
           {
@@ -511,7 +465,7 @@ export default {
           },
           {
             name: 'five',
-            wins: 159,
+            wins: 160,
           },
           {
             name: 'six',
@@ -603,7 +557,7 @@ ul li {
 }
 
 .logo {
-    margin: 25px 0px 0px 810px;
+    margin: 25px 0px 0px 380px;
 }
 
 .bid-btn {
@@ -763,7 +717,8 @@ button {
     border-radius: 12px;
     background: rgb(255, 255, 255);
     width: 375px;
-    height: 1500px;
+    height: 1210px;
+    border-radius: 10px;
     float: left;
 }
 
@@ -771,17 +726,19 @@ button {
     border-radius: 12px;
     background: rgb(255, 255, 255);
     width: 375px;
-    height: 1500px;
+    height: 1210px;
     float: left;
     margin: 0px 60px 0px 60px;
+    border-radius: 10px;
 }
 
 .price-card-lvl3 {
     border-radius: 12px;
     background: rgb(255, 255, 255);
     width: 375px;
-    height: 1500px;
+    height: 1210px;
     float: left;
+    border-radius: 10px;
 }
 
 .container {
@@ -794,29 +751,29 @@ button {
 .price-card-clr-lvl1 {
     background: rgb(238, 41, 61);
     width: 375px;
-    height: 1480px;
-    border-radius: 12px 12px 0px 0px;
+    height: 1210px;
+    border-radius: 10px;
 }
 
 .price-card-clr-lvl2 {
     background: rgb(142, 89, 205);
     width: 375px;
-    height: 1480px;
-    border-radius: 12px 12px 0px 0px;
+    height: 1210px;
+    border-radius: 10px;
 }
 
 .price-card-clr-lvl3 {
     background: rgb(242, 166, 42);
     width: 375px;
-    height: 1480px;
-    border-radius: 12px 12px 0px 0px;
+    height: 1210px;
+    border-radius: 10px;
 }
 
 .hard-score {
     background: rgb(255, 255, 255);
     width: 102px;
     height: 30px;
-    border-radius: 12px 0px 12px 0px;
+    border-radius: 10px 0px 10px 0px;
     padding: 0px 0px 0px 10px
 }
 
@@ -1086,6 +1043,7 @@ button {
     line-height: 44px;
     letter-spacing: 0px;
     text-align: center;
+    margin: 5px 0px 0px 0px;
 }
 
 /** **/
@@ -1224,6 +1182,65 @@ button {
     display: flex;
     justify-content: center;
 }
+
+.lang-btn {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px 0px 0px;
+}
+
+.lang-btn-on {
+    color: rgb(233, 233, 25);
+    font-family: 'Odibee Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 5px 0px 0px 0px;
+}
+
+.lang-btn-on::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(233, 233, 25);
+}
+
+.nav-block {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-block-two {
+    float: left;
+    margin: 75px 0px 0px 0px;
+}
+
+.height {
+    height: 62px;
+    margin: 0px 0px 0px 350px;
+}
+
+.height-xs {
+    height: 30px;
+}
 @media (min-width: 321px) and (max-width: 450px) {
 * {
     margin: 0px;
@@ -1249,7 +1266,7 @@ ul li {
 
 .logo {
     width: 80px;
-    margin: 8px 0px 0px 15px;
+    margin: 8px 0px 0px 90px;
 }
 
 .bid-btn {
@@ -1302,7 +1319,7 @@ button {
 .lang-btn-eng {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 4px;
+    font-size: 8px;
     margin: 1px 0px 0px 0px;
     letter-spacing: 4px;
     height: 15px;
@@ -1314,7 +1331,7 @@ button {
 .lang-btn-eng:hover {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 4px;
+    font-size: 8px;
     margin: 1px 0px 0px 0px;
     letter-spacing: 4px;
     border-bottom: 0.5px solid rgb(255, 255, 255);
@@ -1330,7 +1347,7 @@ button {
 .lang-btn-geo {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 4px;
+    font-size: 8px;
     margin: 1px 0px 0px 0px;
     letter-spacing: 4px;
     display: flex;
@@ -1343,7 +1360,7 @@ button {
 .lang-btn-geo:hover {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 4px;
+    font-size: 8px;
     margin: 1px 0px 0px 0px;
     letter-spacing: 4px;
     display: flex;
@@ -1356,7 +1373,7 @@ button {
 .lang-btn-geo-on {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 4px;
+    font-size: 8px;
 
     margin: 1px 0px 0px 0px;
     letter-spacing: 4px;
@@ -1370,7 +1387,7 @@ button {
 .lang-btn-eng-on {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 4px;
+    font-size: 8px;
 
     margin: 1px 0px 0px 0px;
     letter-spacing: 4px;
@@ -1390,7 +1407,7 @@ button {
     border-radius: 10px;
     background: rgb(255, 255, 255);
     width: 295px;
-    height: 1135px;
+    height: 865px;
     float: left;
     margin: 20px 0px 0px 0px;
 }
@@ -1399,8 +1416,9 @@ button {
     border-radius: 10px;
     background: rgb(255, 255, 255);
     width: 295px;
-    height: 1135px;
+    height: 865px;
     float: left;
+    border-radius: 10px;
     margin: 20px 60px 0px 60px;
 }
 
@@ -1408,7 +1426,7 @@ button {
     border-radius: 10px;
     background: rgb(255, 255, 255);
     width: 295px;
-    height: 1135px;
+    height: 865px;
     float: left;
     margin: 20px 0px 0px 0px;
 }
@@ -1418,7 +1436,7 @@ button {
     display: flex;
     justify-content: center;
     background-image: url(public/backTwo.png);
-    height: 6000px;
+    height: 4050px;
     flex-direction: column;
     align-items: center;
 }
@@ -1426,29 +1444,29 @@ button {
 .price-card-clr-lvl1 {
     background: rgb(238, 41, 61);
     width: 295px;
-    height: 1115px;
-    border-radius: 12px 12px 0px 0px;
+    height: 865px;
+    border-radius: 10px;
 }
 
 .price-card-clr-lvl2 {
     background: rgb(142, 89, 205);
     width: 295px;
-    height: 1115px;
-    border-radius: 12px 12px 0px 0px;
+    height: 865px;
+    border-radius: 10px;
 }
 
 .price-card-clr-lvl3 {
     background: rgb(242, 166, 42);
     width: 295px;
-    height: 1115px;
-    border-radius: 12px 12px 0px 0px;
+    height: 865px;
+    border-radius: 10px;
 }
 
 .hard-score {
     background: rgb(255, 255, 255);
     width: 68px;
     height: 22px;
-    border-radius: 12px 0px 12px 0px;
+    border-radius: 10px 0px 10px 0px;
     padding: 0px 0px 0px 8px
 }
 
@@ -1825,6 +1843,63 @@ button {
 
 .navigation-youtube {
     display: contents;
+}
+
+.lang-btn {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px 0px 0px;
+}
+
+.lang-btn-on {
+    color: rgb(233, 233, 25);
+    font-family: 'Odibee Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 4px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 5px 0px 0px 0px;
+}
+
+.lang-btn-on::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(233, 233, 25);
+}
+
+.nav-block {
+    height: 50px;
+}
+
+.nav-block-two {
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+.height-xs {
+    height: 20px;
+}
+
+.height {
+    height: 20px;
+    margin: 20px 0px 0px 50px
 }
 }
 </style>
