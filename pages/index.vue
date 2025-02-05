@@ -32,18 +32,22 @@
             </div>
             <div class="container">   
                 <div class="table-raitings">
-                    <p class="raiting-txt">Team Rating</p>
+                    <p v-if="language_status == true" class="raiting-txt">Team Rating</p>
+                    <p v-if="language_status == false" class="raiting-txtGEO">გუნდის რეიტინგი</p>
                     <div class="table-raiting">
                         <div class="raiting">
                             <div class="header-table">
                                 <div class="raiting-block-left-side">
-                                    <p class="raiting-txt-two">Place</p>
+                                    <p v-if="language_status == true" class="raiting-txt-two">Place</p>
+                                    <p v-if="language_status == false" class="raiting-txt-twoGEO">ადგილი</p>
                                 </div>
                                 <div class="raiting-block-center">
-                                    <p class="raiting-txt-two">Team neam</p>
+                                    <p v-if="language_status == true" class="raiting-txt-two">Team neam</p>
+                                    <p v-if="language_status == false" class="raiting-txt-twoGEO">გუნდის სახელი</p>
                                 </div>
                                 <div class="raiting-block-right-side">
-                                    <p class="raiting-txt-two">Victories</p>
+                                    <p v-if="language_status == true" class="raiting-txt-two">Victories</p>
+                                    <p v-if="language_status == false" class="raiting-txt-twoGEO">გამარჯვებები</p>
                                 </div>
                             </div>  
                             <div v-for="(team, index) in topTeams" :key="index" v-bind:class="getClass(index)">
@@ -77,14 +81,16 @@
                             <div class="white-line"></div>
                             <div>
                                 <p class="price">20 GEL<span class="price-txt-two">/player</span></p>
-                                <p class="price-txt-three">Conditions:</p>
+                                <p v-if="language_status == true" class="price-txt-three">Conditions:</p>
+                                <p v-if="language_status == false" class="price-txt-three">პირობები:</p>
                                 <div>
                                     <ul class="navigation-conditions">
                                         <li>
                                             <img class="icons" src="public/ime.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">30 minutes</p>
+                                            <p v-if="language_status == true" class="icon-txt">20 minutes</p>
+                                            <p v-if="language_status == false" class="icon-txt">20 წუთები</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -94,18 +100,21 @@
                                             <img class="icons" src="public/players.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">10 players</p>
+                                            <p v-if="language_status == true" class="icon-txt">10 players</p>
+                                            <p v-if="language_status == false" class="icon-txt">10 მოთამაშე</p>
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="price-txt-three">Each player gets:</p>
+                                <p v-if="language_status == true" class="price-txt-three">Each player gets:</p>
+                                <p v-if="language_status == false" class="price-txt-three">მოთამაშე იღებს:</p>
                                 <div>
                                     <ul class="navigation-conditions">
                                         <li>
                                             <img class="icons" src="public/armor.png">
                                         </li> 
                                         <li>
-                                            <p class="icon-txt">Protection</p>
+                                            <p v-if="language_status == true" class="icon-txt">Protection</p>
+                                            <p v-if="language_status == false" class="icon-txt">დაცვა</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -115,7 +124,8 @@
                                             <img class="icons" src="public/ammo.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">250 rounds</p>
+                                            <p v-if="language_status == true" class="icon-txt">200 rounds</p>
+                                            <p v-if="language_status == false" class="icon-txt">200 ვაზნები</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -125,7 +135,8 @@
                                             <img class="icons" src="public/gun.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">Guns:</p>
+                                            <p v-if="language_status == true" class="icon-txt">Guns:</p>
+                                            <p v-if="language_status == false" class="icon-txt">იარაღი:</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -140,14 +151,16 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="price-txt-three">Game mode</p>
+                                <p v-if="language_status == true" class="price-txt-three">Game mode</p>
+                                <p v-if="language_status == false" class="price-txt-three">თამაშის რეჟიმი</p>
                                 <div>
                                     <ul class="navigation-conditions-flag">
                                         <li>
                                             <img src="public/flag.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt-two">Сapture the flag</p>
+                                            <p v-if="language_status == true" class="icon-txt-two">Сapture the flag</p>
+                                            <p v-if="language_status == false" class="icon-txt-two">დროშა დაიჭირე</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -175,15 +188,17 @@
                             <p class="lvl-txt">Level 2</p>
                             <div class="white-line"></div>
                             <div>
-                                <p class="price">20 GEL<span class="price-txt-two">/player</span></p>
-                                <p class="price-txt-three">Conditions:</p>
+                                <p class="price">30 GEL<span class="price-txt-two">/player</span></p>
+                                <p v-if="language_status == true" class="price-txt-three">Conditions:</p>
+                                <p v-if="language_status == false" class="price-txt-three">პირობები:</p>
                                 <div>
                                     <ul class="navigation-conditions">
                                         <li>
                                             <img class="icons" src="public/ime.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">30 minutes</p>
+                                            <p v-if="language_status == true" class="icon-txt">45 minutes</p>
+                                            <p v-if="language_status == false" class="icon-txt">45 წუთები</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -193,18 +208,21 @@
                                             <img class="icons" src="public/players.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">10 players</p>
+                                            <p v-if="language_status == true" class="icon-txt">10 players</p>
+                                            <p v-if="language_status == false" class="icon-txt">10 მოთამაშე</p>
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="price-txt-three">Each player gets:</p>
+                                <p v-if="language_status == true" class="price-txt-three">Each player gets:</p>
+                                <p v-if="language_status == false" class="price-txt-three">მოთამაშე იღებს:</p>
                                 <div>
                                     <ul class="navigation-conditions">
                                         <li>
                                             <img class="icons" src="public/armor.png">
                                         </li> 
                                         <li>
-                                            <p class="icon-txt">Protection</p>
+                                            <p v-if="language_status == true" class="icon-txt">Protection</p>
+                                            <p v-if="language_status == false" class="icon-txt">დაცვა</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -214,7 +232,8 @@
                                             <img class="icons" src="public/ammo.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">250 rounds</p>
+                                            <p v-if="language_status == true" class="icon-txt">400 rounds</p>
+                                            <p v-if="language_status == false" class="icon-txt">400 ვაზნები</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -224,7 +243,8 @@
                                             <img class="icons" src="public/gun.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">Guns:</p>
+                                            <p v-if="language_status == true" class="icon-txt">Guns:</p>
+                                            <p v-if="language_status == false" class="icon-txt">იარაღი:</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -239,19 +259,21 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="price-txt-three">Game mode</p>
+                                <p v-if="language_status == true" class="price-txt-three">Game mode</p>
+                                <p v-if="language_status == false" class="price-txt-three">თამაშის რეჟიმი</p>
                                 <div>
                                     <ul class="navigation-conditions-flag">
                                         <li>
-                                            <img src="public/flag.png">
+                                            <img src="public/mode2.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt-two">Сapture the flag</p>
+                                            <p v-if="language_status == true" class="icon-txt-two">Fight to the death</p>
+                                            <p v-if="language_status == false" class="icon-txt-two">ბრძოლა სიკვდილამდე</p>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="price-block">
-                                    <p class="price-txt-four">200 GEL</p>
+                                    <p class="price-txt-four">300 GEL</p>
                                 </div>
                             </div>
                         </div>
@@ -277,15 +299,17 @@
                             <p class="lvl-txt">Level 3</p>
                             <div class="white-line"></div>
                             <div>
-                                <p class="price">20 GEL<span class="price-txt-two">/player</span></p>
-                                <p class="price-txt-three">Conditions:</p>
+                                <p class="price">45 GEL<span class="price-txt-two">/player</span></p>
+                                <p v-if="language_status == true" class="price-txt-three">Conditions:</p>
+                                <p v-if="language_status == false" class="price-txt-three">პირობები:</p>
                                 <div>
                                     <ul class="navigation-conditions">
                                         <li>
                                             <img class="icons" src="public/ime.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">30 minutes</p>
+                                            <p v-if="language_status == true" class="icon-txt">60 minutes</p>
+                                            <p v-if="language_status == false" class="icon-txt">60 წუთები</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -295,18 +319,21 @@
                                             <img class="icons" src="public/players.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">10 players</p>
+                                            <p v-if="language_status == true" class="icon-txt">10 players</p>
+                                            <p v-if="language_status == false" class="icon-txt">10 მოთამაშე</p>
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="price-txt-three">Each player gets:</p>
+                                <p v-if="language_status == true" class="price-txt-three">Each player gets:</p>
+                                <p v-if="language_status == false" class="price-txt-three">მოთამაშე იღებს:</p>
                                 <div>
                                     <ul class="navigation-conditions">
                                         <li>
                                             <img class="icons" src="public/armor.png">
                                         </li> 
                                         <li>
-                                            <p class="icon-txt">Protection</p>
+                                            <p v-if="language_status == true" class="icon-txt">Protection</p>
+                                            <p v-if="language_status == false" class="icon-txt">დაცვა</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -316,7 +343,8 @@
                                             <img class="icons" src="public/ammo.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">250 rounds</p>
+                                            <p v-if="language_status == true" class="icon-txt">550 rounds</p>
+                                            <p v-if="language_status == false" class="icon-txt">550 ვაზნები</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -326,7 +354,8 @@
                                             <img class="icons" src="public/gun.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt">Guns:</p>
+                                            <p v-if="language_status == true" class="icon-txt">Guns:</p>
+                                            <p v-if="language_status == false" class="icon-txt">იარაღი:</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -341,20 +370,115 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="price-txt-three">Game mode</p>
+                                <p v-if="language_status == true" class="price-txt-three">Game mode</p>
+                                <p v-if="language_status == false" class="price-txt-three">თამაშის რეჟიმი</p>
                                 <div>
                                     <ul class="navigation-conditions-flag">
                                         <li>
-                                            <img src="public/flag.png">
+                                            <img src="public/mode3.png">
                                         </li>
                                         <li>
-                                            <p class="icon-txt-two">Сapture the flag</p>
+                                            <p v-if="language_status == true" class="icon-txt-two">Rescue the hostage</p>
+                                            <p v-if="language_status == false" class="icon-txt-two">მძევლის გადარჩენა</p>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="price-block">
-                                    <p class="price-txt-four">200 GEL</p>
+                                    <p class="price-txt-four">450 GEL</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p v-if="language_status == true" class="raiting-txt">Social networks</p>
+                    <p v-if="language_status == false" class="raiting-txtGEO">სოციალური ქსელები</p>
+                    <div class="sockial-network">
+                        <div class="facebook">
+                            <ul class="network-nav">
+                                <li>
+                                    <img class="facebook-icon" src="public/facebook.png">
+                                </li>
+                                <li>
+                                    <p class="facebook-txt">FACEBOOK</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="insta">
+                            <ul class="network-nav">
+                                <li>
+                                    <img class="telegram-icon" src="public/telega.png">
+                                </li>
+                                <li>
+                                    <p class="facebook-txt">TELEGRAM</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="youtube">
+                            <p class="youtube-txt">Youtube videos:</p>
+                        </div>
+                        <div class="sockial-network">
+                            <ul class="navigation-youtube">
+                                <li>
+                                    <iframe class="video-num-one" src="https://www.youtube.com/embed/JFLNhWmk32Y?si=tG_yaTPAf01piJD-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </li>
+                                <li>
+                                    <iframe class="video-num-two" src="https://www.youtube.com/embed/rCAslKeDFzg?si=zQomkWyMPsqLvDpC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p v-if="language_status == true" class="raiting-txt">Sign up for the game</p>
+                    <p v-if="language_status == false" class="raiting-txtGEO">დარეგისტრირდით თამაშზე</p>
+                    <div class="all-contact-block-nav">
+                        <div class="navigation-contact">
+                            <p class="contact-txt">Contacts</p>
+                            <div class="contact-block">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <img class="Whatsapp" src="public/Whatsapp.png">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img class="Telegram" src="public/Telegram.png">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="contact-block-two">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <img class="Messenger" src="public/Messenger.png">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <img class="Viber" src="public/Viber.png">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="navigation-contact-two">
+                            <p class="contact-txt">Phone number</p>
+                            <div>
+                                <button class="call">
+                                    <ul>
+                                        <li>
+                                            <img class="call-icon" src="public/call.svg">
+                                        </li>
+                                        <li>
+                                            <p class="call-number">+995568622207</p>
+                                        </li>
+                                    </ul>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -647,7 +771,7 @@ button {
     border-radius: 12px;
     background: rgb(255, 255, 255);
     width: 375px;
-    height: 502px;
+    height: 1500px;
     float: left;
     margin: 0px 60px 0px 60px;
 }
@@ -656,7 +780,7 @@ button {
     border-radius: 12px;
     background: rgb(255, 255, 255);
     width: 375px;
-    height: 502px;
+    height: 1500px;
     float: left;
 }
 
@@ -677,14 +801,14 @@ button {
 .price-card-clr-lvl2 {
     background: rgb(142, 89, 205);
     width: 375px;
-    height: 485px;
+    height: 1480px;
     border-radius: 12px 12px 0px 0px;
 }
 
 .price-card-clr-lvl3 {
     background: rgb(242, 166, 42);
     width: 375px;
-    height: 485px;
+    height: 1480px;
     border-radius: 12px 12px 0px 0px;
 }
 
@@ -739,6 +863,20 @@ button {
     text-align: center;
     width: 100vw;
     height: 115px;
+    margin: 250px 0px 20px 0px;
+}
+
+.raiting-txtGEO {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 115px;
+    margin: 250px 0px 20px 0px;
 }
 
 .table-raiting {
@@ -765,6 +903,18 @@ button {
     letter-spacing: 0px;
     text-align: center;
     vertical-align: middle;
+}
+
+.raiting-txt-twoGEO {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 71px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+
 }
 
 .raiting-block-left-side {
@@ -898,7 +1048,7 @@ button {
     letter-spacing: 0px;
     text-align: center;
     margin: 0px 0px 0px 10px;
-    width: 230px;
+    width: 375px;
 }
 
 .navigation-conditions {
@@ -918,14 +1068,14 @@ button {
 
 .price-block {
     box-sizing: border-box;
-    border: 2px solid rgb(255, 255, 255);
+    border-top: 2px solid rgb(255, 255, 255);
     border-radius: 10px 0px 0px 0px;
     width: 169px;
     height: 39px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 35 px 0px 0px 206px;
+    margin: 30px 0px 0px 206px;
 }
 
 .price-txt-four {
@@ -936,6 +1086,143 @@ button {
     line-height: 44px;
     letter-spacing: 0px;
     text-align: center;
+}
+
+/** **/
+
+.facebook {
+    border-radius: 12px;
+    background: linear-gradient(0.00deg, rgb(0, 98, 224, 0.25) 2.922%,rgb(25, 175, 255 , 0.25) 100%);
+    width: 600px;
+    height: 180px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.insta {
+    border-radius: 12px;
+    background: linear-gradient(137.63deg, rgb(0, 136, 204, 0.25) 8.683%,rgb(0, 131, 197, 0.25) 92.639%);
+    height: 180px;
+    width: 600px;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px 50px;
+}
+
+.facebook-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 358px;
+    height: 106px;
+}
+
+.network-nav {
+    display: flex;
+    align-items: center;
+}
+
+.sockial-network {
+    display: flex;
+    justify-content: center
+}
+
+.youtube-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 96px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: start;
+    width: 1245px;
+    height: 106px;
+}
+
+.youtube {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0px 10px 0px;
+}
+
+.video-num-one {
+    width: 600px;
+    height: 315px;
+
+}
+
+.video-num-two {
+    width: 600px;
+    height: 315px;
+    margin: 0px 0px 0px 50px;
+}
+
+.contact-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+}
+
+.contact-block {
+    float: left;
+}
+
+.contact-block-two {
+    float: left;
+}
+
+.Telegram {
+    margin: 0px 20px 0px 20px;
+}
+
+.Messenger {
+    margin: 0px 20px 0px 0px;
+}
+
+.call {
+    border: 1px solid rgb(255, 255, 255);
+    width: 560px;
+    height: 125px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.call-number {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0px 0px 0px 10px
+}
+
+.navigation-contact {
+    float: left;
+}
+
+.navigation-contact-two {
+    float: left;
+    margin: 0px 0px 0px 125px;
+}
+
+.all-contact-block-nav {
+    display: flex;
+    justify-content: center;
 }
 @media (min-width: 321px) and (max-width: 450px) {
 * {
@@ -1218,6 +1505,19 @@ button {
     height: 80px;
 }
 
+.raiting-txtGEO {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 80px;
+    margin: 20px 0px 0px 0px
+}
+
 .table-raiting {
     display: flex;
     justify-content: center;
@@ -1236,6 +1536,17 @@ button {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
     font-size: 20px;
+    font-weight: 400;
+    line-height: 71px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.raiting-txt-twoGEO {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 10px;
     font-weight: 400;
     line-height: 71px;
     letter-spacing: 0px;
@@ -1380,7 +1691,7 @@ button {
     letter-spacing: 0px;
     text-align: center;
     margin: 0px 0px 0px 0px;
-    width: 230px;
+    width: 295px;
 }
 
 .navigation-conditions {
@@ -1400,14 +1711,14 @@ button {
 
 .price-block {
     box-sizing: border-box;
-    border: 2px solid rgb(255, 255, 255);
+    border-top: 2px solid rgb(255, 255, 255);
     border-radius: 10px 0px 0px 0px;
     width: 169px;
     height: 39px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 25px 0px 0px 126px;
+    margin: 22px 0px 0px 126px;
 }
 
 .price-txt-four {
@@ -1423,6 +1734,97 @@ button {
 .icons {
     width: 35px;
     height: 35px;
+}
+
+/** **/
+
+.facebook {
+    border-radius: 12px;
+    background: linear-gradient(0.00deg, rgb(0, 98, 224, 0.25) 2.922%,rgb(25, 175, 255 , 0.25) 100%);
+    width: 295px;
+    height: 65px;
+    float: left;
+    display: block;
+}
+
+.insta {
+    border-radius: 12px;
+    background: linear-gradient(137.63deg, rgb(0, 136, 204, 0.25) 8.683%,rgb(0, 131, 197, 0.25) 92.639%);
+    width: 295px;
+    height: 65px;
+    float: left;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 0px 0px;
+}
+
+.facebook-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    width: 225px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.network-nav {
+    display: block
+}
+
+.sockial-network {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.youtube-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: 0px;
+    width: 295px;
+    height: 50px
+}
+
+.youtube {
+    display: flex;
+    margin: 20px 0px 0px 0px;
+}
+
+.video-num-one {
+    width: 295px;
+    height: 215px;
+
+}
+
+.video-num-two {
+    width: 295px;
+    height: 215px;
+    margin: 0px 0px 0px 0px;
+}
+
+.telegram-icon {
+    width: 50px;
+    height: 50px;
+    margin: 7px 0px 0px 20px;
+}
+
+.facebook-icon {
+    width: 50px;
+    height: 50px;
+    margin: 7px 0px 0px 20px;
+}
+
+.navigation-youtube {
+    display: contents;
 }
 }
 </style>
