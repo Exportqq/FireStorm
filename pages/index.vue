@@ -1899,7 +1899,7 @@ button {
 
 .height {
     height: 20px;
-    margin: 20px 0px 0px 50px
+    margin: 20px 0px 0px 0px
 }
 }
 </style>
