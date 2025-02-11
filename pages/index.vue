@@ -2059,7 +2059,7 @@ button {
     font-weight: 500;
     line-height: 44px;
     letter-spacing: 0px;
-    text-align: center;
+    text-align: start;
     width: 295px;
     height: 44px;
     margin: 20px 0px 10px 0px;
