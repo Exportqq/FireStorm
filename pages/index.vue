@@ -25,8 +25,8 @@
             </div>
             <div class="container">   
                 <div class="table-raitings">
-                    <p v-if="language_status == true" class="raiting-txt">Team Rating</p>
-                    <p v-if="language_status == false" class="raiting-txtGEO">გუნდის რეიტინგი</p>
+                    <p v-if="language_status == true" class="raiting-txt-crutch-two">Team Rating</p>
+                    <p v-if="language_status == false" class="raiting-txtGEO-crutch-two">გუნდის რეიტინგი</p>
                     <div class="table-raiting">
                         <div class="raiting">
                             <div class="header-table">
@@ -57,6 +57,8 @@
                         </div>
                     </div>  
                 </div>
+                <p v-if="language_status == true" class="raiting-txt-crutch">Available packages</p>
+                <p v-if="language_status == false" class="raiting-txtGEO-crutch">ხელმისაწვდომი პაკეტები</p>
                 <div class="navigation-price-card">
                     <div class="price-card-lvl1">
                         <div class="price-card-clr-lvl1">
@@ -378,19 +380,24 @@
                                 <li>
                                     <iframe class="video-num-one" src="https://www.youtube.com/embed/JFLNhWmk32Y?si=tG_yaTPAf01piJD-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </li>
-                                <li>
+                                <li class="navigation-youtube-videos">
                                     <iframe class="video-num-two" src="https://www.youtube.com/embed/rCAslKeDFzg?si=zQomkWyMPsqLvDpC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div style="display: none;">
+                <div style="display: block;">
                     <p v-if="language_status == true" class="raiting-txt">Sign up for the game</p>
                     <p v-if="language_status == false" class="raiting-txtGEO">დარეგისტრირდით თამაშზე</p>
+                    <div class="flex-reminder">
+                        <p v-if="language_status == true" class="reminder-txt">Write or call us so that we can sign you up for the game !</p>
+                        <p v-if="language_status == false" class="reminder-txtGEO">მოგვწერეთ ან დაგვირეკეთ, რათა დარეგისტრირდეთ თამაშზე !</p>
+                    </div>
                     <div class="all-contact-block-nav">
                         <div class="navigation-contact">
-                            <p class="contact-txt">Contacts</p>
+                            <p v-if="language_status == true" class="contact-txt">Contacts</p>
+                            <p v-if="language_status == false" class="contact-txt">კონტაქტები</p>
                             <div class="contact-block">
                                 <ul>
                                     <li>
@@ -405,26 +412,13 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="contact-block-two">
-                                <ul>
-                                    <li>
-                                        <a>
-                                            <img class="Messenger" src="public/Messenger.png">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a>
-                                            <img class="Viber" src="public/Viber.png">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                         <div class="navigation-contact-two">
-                            <p class="contact-txt">Phone number</p>
+                            <p v-if="language_status == true" class="contact-txt">Phone number</p>
+                            <p v-if="language_status == false" class="contact-txt">ტელეფონის ნომერი</p>
                             <div>
                                 <button class="call">
-                                    <ul>
+                                    <ul class="calling-navigation">
                                         <li>
                                             <img class="call-icon" src="public/call.svg">
                                         </li>
@@ -787,7 +781,8 @@ button {
 
 .lvl-icon {
     width: 375px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .lvl-txt {
@@ -813,14 +808,14 @@ button {
 .raiting-txt {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 96px;
+    font-size: 64px;
     font-weight: 400;
     line-height: 106px;
     letter-spacing: 0px;
     text-align: center;
     width: 100vw;
     height: 115px;
-    margin: 0px 0px 20px 0px;
+    margin: 300px 0px 20px 0px;
 }
 
 .raiting-txtGEO {
@@ -833,7 +828,59 @@ button {
     text-align: center;
     width: 100vw;
     height: 115px;
-    margin: 0px 0px 20px 0px;
+    margin: 300px 0px 20px 0px;
+}
+
+.raiting-txt-crutch {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 115px;
+    margin: 300px 0px 0px 0px;
+}
+
+.raiting-txtGEO-crutch {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 115px;
+    margin: 300px 0px 0px 0px
+}
+
+.raiting-txt-crutch-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 115px;
+    margin: 300px 0px 0px 0px;
+}
+
+.raiting-txtGEO-crutch-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 115px;
+    margin: 300px 0px 0px 0px
 }
 
 .table-raiting {
@@ -1103,6 +1150,7 @@ button {
     text-align: start;
     width: 1245px;
     height: 106px;
+    margin: 300px 0px 0px 0px;
 }
 
 .youtube {
@@ -1126,10 +1174,11 @@ button {
 .contact-txt {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
-    font-size: 72px;
+    font-size: 48px;
     font-weight: 400;
     line-height: 80px;
     letter-spacing: 0px;
+    text-align: start;
 }
 
 .contact-block {
@@ -1175,7 +1224,7 @@ button {
 
 .navigation-contact-two {
     float: left;
-    margin: 0px 0px 0px 125px;
+    margin: 0px 0px 0px 415px;
 }
 
 .all-contact-block-nav {
@@ -1241,6 +1290,47 @@ button {
 .height-xs {
     height: 30px;
 }
+
+.navigation-youtube-videos {
+    margin: 0px 0px 0px 0px;
+}
+
+.reminder-txt {
+    color: rgb(255, 255, 255);  /* Начальный цвет - белый */
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    text-align: start;
+    width: 1265px;
+    margin: 20px 0px 20px 0px;
+    animation: blink-red 8s infinite; /* Добавляем анимацию */
+}
+
+/* Определение анимации */
+@keyframes blink-red {
+    0% { color: rgb(255, 255, 255); }  /* Начальное состояние (белый) */
+    10% { color: rgb(238, 41, 61); }    /* Красный */
+    15% { color: rgb(255, 255, 255); }  /* Белый */
+    20% { color: rgb(238, 41, 61); }    /* Красный */
+    40% { color: rgb(255, 255, 255); }  /* Белый */
+    100% { color: rgb(255, 255, 255); } /* Белый в конце цикла (для плавного перехода) */
+}
+
+.reminder-txtGEO {
+    color: rgb(255, 255, 255);  /* Начальный цвет - белый */
+    font-family: 'Odibee Sans';
+    font-size: 64px;
+    font-weight: 400;
+    text-align: start;
+    width: 1265px;
+    margin: 20px 0px 20px 0px;
+    animation: blink-red 8s infinite;
+}
+
+.flex-reminder {
+    display: flex;
+    justify-content: center;
+}
 @media (min-width: 321px) and (max-width: 450px) {
 * {
     margin: 0px;
@@ -1284,25 +1374,25 @@ ul li {
     font-family: 'Karantina';
     text-align: center;
     width: 100vw;
-    height: 15px;
+    height: 36px;
 }
 
 .first-letter {
-    font-size: 70px;
+    font-size: 90px;
 }
 
 .end-letter {
-    font-size: 70px;
+    font-size: 90px;
 }
 
 .center-letter {
-    font-size: 55px;
+    font-size: 70px;
 }
 
 .header-txt-two {
     color: rgb(233, 233, 25);
     font-family: 'Odibee Sans';
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 106px;
     letter-spacing: 4px;
@@ -1441,21 +1531,21 @@ button {
 .price-card-clr-lvl1 {
     background: rgb(238, 41, 61);
     width: 295px;
-    height: 865px;
+    height: 868px;
     border-radius: 10px;
 }
 
 .price-card-clr-lvl2 {
     background: rgb(142, 89, 205);
     width: 295px;
-    height: 865px;
+    height: 868px;
     border-radius: 10px;
 }
 
 .price-card-clr-lvl3 {
     background: rgb(242, 166, 42);
     width: 295px;
-    height: 865px;
+    height: 868px;
     border-radius: 10px;
 }
 
@@ -1479,7 +1569,8 @@ button {
 
 .lvl-icon {
     width: 295px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .lvl-txt {
@@ -1518,9 +1609,62 @@ button {
     text-align: center;
     width: 100vw;
     height: 80px;
+    margin: 60px 0px 0px 0px;
 }
 
 .raiting-txtGEO {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 80px;
+    margin: 60px 0px 0px 0px
+}
+
+.raiting-txt-crutch {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 60px;
+    margin: 60px 0px 0px 0px;
+}
+
+.raiting-txtGEO-crutch {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 60px;
+    margin: 60px 0px 0px 0px
+}
+
+.raiting-txt-crutch-two {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 106px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 100vw;
+    height: 60px;
+    margin: 0px 0px 0px 0px;
+}
+
+.raiting-txtGEO-crutch-two {
     color: rgb(255, 255, 255);
     font-family: 'Odibee Sans';
     font-size: 24px;
@@ -1643,7 +1787,7 @@ button {
 }
 
 .navigation-price-card {
-    margin: 20px 0px 20px 0px;
+    margin: 0px 0px 20px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1806,7 +1950,8 @@ button {
     line-height: 50px;
     letter-spacing: 0px;
     width: 295px;
-    height: 50px
+    height: 50px;
+    margin: 60px 0px 0px 0px;
 }
 
 .youtube {
@@ -1901,6 +2046,103 @@ button {
 
 .ttx-nav {
     margin: 40px 0px 0px 0px;
+}
+
+.navigation-youtube-videos {
+    margin: 10px 0px 0px 0px;
+}
+
+.contact-txt {
+    color: rgb(255, 255, 255);
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0px;
+    text-align: center;
+    width: 295px;
+    height: 44px;
+    margin: 20px 0px 10px 0px;
+}
+
+.Whatsapp {
+    width: 50px;
+    height: 50px;
+}
+
+.Telegram {
+    width: 50px;
+    height: 50px;
+}
+
+.call {
+    width: 295px;
+    height: 70px;
+}
+
+.all-contact-block-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.call-number {
+    color: rgb(255, 255, 255);
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 80px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0px 0px 0px 10px;
+}
+
+.navigation-contact-two {
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+.call-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.calling-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.reminder-txt {
+    color: rgb(255, 255, 255);  /* Начальный цвет - белый */
+    font-family: 'Odibee Sans';
+    font-size: 24px;
+    font-weight: 400;
+    width: 295px;
+    text-align: start;
+    margin: 0px 0px 0px 0px;
+    animation: blink-red 8s infinite; /* Добавляем анимацию */
+}
+
+/* Определение анимации */
+@keyframes blink-red {
+    0% { color: rgb(255, 255, 255); }  /* Начальное состояние (белый) */
+    10% { color: rgb(238, 41, 61); }    /* Красный */
+    15% { color: rgb(255, 255, 255); }  /* Белый */
+    20% { color: rgb(238, 41, 61); }    /* Красный */
+    40% { color: rgb(255, 255, 255); }  /* Белый */
+    100% { color: rgb(255, 255, 255); } /* Белый в конце цикла (для плавного перехода) */
+}
+
+.reminder-txtGEO {
+    color: rgb(255, 255, 255);  /* Начальный цвет - белый */
+    font-family: 'Odibee Sans';
+    font-size: 19px;
+    font-weight: 400;
+    text-align: start;
+    margin: 0px 0px 0px 0px;
+    animation: blink-red 8s infinite;
+    width: 295px;
 }
 }
 </style>
