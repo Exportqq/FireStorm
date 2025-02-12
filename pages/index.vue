@@ -1661,7 +1661,7 @@ button {
     text-align: center;
     width: 100vw;
     height: 60px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 15px 0px;
 }
 
 .raiting-txtGEO-crutch-two {
